@@ -5,9 +5,7 @@ function App() {
   const onButtonClicked = () => alert("MethodNotImplementedException");
 
   // gives error when array empty
-  const [data, setData]: any = useState([
-    { id: -1, userId: -1, title: "none", completed: false },
-  ]);
+  const data: any = [{ id: -1, title: "none", completed: false }];
 
   // fetch:
   fetch("https://jsonplaceholder.typicode.com/todos")
@@ -17,10 +15,8 @@ function App() {
 
   return (
     <div className="App">
-      <NewComponent msg="hi there" />
       <div className="home">
         <h1>The Best Todo App</h1>
-        <NewComponent msg="Hi there" />
         <button onClick={onButtonClicked}>Load todos</button>
         <p>
           <label>Add new todo:</label>
@@ -31,7 +27,6 @@ function App() {
           <li>
             <p>
               <span>{data[0].id}</span>
-              <span>{data[0].userId}</span>
               <span className="completed">
                 <s>{data[0].title}</s>
               </span>
